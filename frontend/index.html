@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hierarchical Location Selector</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>📍 Location Selector</h1>
+        <p>Select your location hierarchically</p>
+      </header>
+
+      <main class="main-content">
+        <form id="locationForm" class="location-form">
+          <!-- Country Selection -->
+          <div class="form-group">
+            <label for="country">
+              Country <span class="required">*</span>
+            </label>
+            <select id="country" name="country" class="form-select" required>
+              <option value="">Loading countries...</option>
+            </select>
+            <span class="helper-text">Start by selecting a country</span>
+          </div>
+
+          <!-- Division Selection -->
+          <div class="form-group">
+            <label for="division">
+              Division / Province <span class="required">*</span>
+            </label>
+            <select id="division" name="division" class="form-select" disabled>
+              <option value="">Select country first</option>
+            </select>
+            <span class="helper-text">Select country to enable</span>
+          </div>
+
+          <!-- District Selection -->
+          <div class="form-group">
+            <label for="district">
+              District <span class="required">*</span>
+            </label>
+            <select id="district" name="district" class="form-select" disabled>
+              <option value="">Select division first</option>
+            </select>
+            <span class="helper-text">Select division to enable</span>
+          </div>
+
+          <!-- City/Upazila Selection -->
+          <div class="form-group">
+            <label for="city">
+              City / Upazila <span class="required">*</span>
+            </label>
+            <select id="city" name="city" class="form-select" disabled>
+              <option value="">Select district first</option>
+            </select>
+            <span class="helper-text">Select district to enable</span>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="form-actions">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              id="submitBtn"
+              disabled
+            >
+              Submit Selection
+            </button>
+            <button type="button" class="btn btn-secondary" id="resetBtn">
+              Reset Form
+            </button>
+          </div>
+        </form>
+
+        <!-- Selected Location Display -->
+        <div
+          id="selectedLocation"
+          class="selected-location"
+          style="display: none"
+        >
+          <h3>✓ Selected Location</h3>
+          <div class="location-details">
+            <div class="detail-item">
+              <span class="detail-label">Country:</span>
+              <span class="detail-value" id="selectedCountry">-</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Division:</span>
+              <span class="detail-value" id="selectedDivision">-</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">District:</span>
+              <span class="detail-value" id="selectedDistrict">-</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">City:</span>
+              <span class="detail-value" id="selectedCity">-</span>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>Hierarchical Dropdown Project © 2026</p>
+      </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+      <div class="spinner"></div>
+      <p>Loading...</p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

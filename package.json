@@ -1,0 +1,27 @@
+{
+  "name": "dropdown_project",
+  "version": "1.0.0",
+  "description": "Hierarchical dropdown project with MySQL backend",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js"
+  },
+  "keywords": [
+    "dropdown",
+    "mysql",
+    "express",
+    "hierarchical"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.6.5",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
