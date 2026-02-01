@@ -9,95 +9,148 @@
   <body>
     <div class="container">
       <header class="header">
-        <h1>📍 Location Selector</h1>
-        <p>Select your location hierarchically</p>
+        <h1>🧭 Where Are You?</h1>
+        <p>Find your perfect location step by step</p>
       </header>
 
       <main class="main-content">
-        <form id="locationForm" class="location-form">
-          <!-- Country Selection -->
-          <div class="form-group">
-            <label for="country">
-              Country <span class="required">*</span>
-            </label>
-            <select id="country" name="country" class="form-select" required>
-              <option value="">Loading countries...</option>
-            </select>
-            <span class="helper-text">Start by selecting a country</span>
-          </div>
-
-          <!-- Division Selection -->
-          <div class="form-group">
-            <label for="division">
-              Division / Province <span class="required">*</span>
-            </label>
-            <select id="division" name="division" class="form-select" disabled>
-              <option value="">Select country first</option>
-            </select>
-            <span class="helper-text">Select country to enable</span>
-          </div>
-
-          <!-- District Selection -->
-          <div class="form-group">
-            <label for="district">
-              District <span class="required">*</span>
-            </label>
-            <select id="district" name="district" class="form-select" disabled>
-              <option value="">Select division first</option>
-            </select>
-            <span class="helper-text">Select division to enable</span>
-          </div>
-
-          <!-- City/Upazila Selection -->
-          <div class="form-group">
-            <label for="city">
-              City / Upazila <span class="required">*</span>
-            </label>
-            <select id="city" name="city" class="form-select" disabled>
-              <option value="">Select district first</option>
-            </select>
-            <span class="helper-text">Select district to enable</span>
-          </div>
-
-          <!-- Submit Button -->
-          <div class="form-actions">
-            <button
-              type="submit"
-              class="btn btn-primary"
-              id="submitBtn"
-              disabled
-            >
-              Submit Selection
-            </button>
-            <button type="button" class="btn btn-secondary" id="resetBtn">
-              Reset Form
-            </button>
-          </div>
-        </form>
-
-        <!-- Selected Location Display -->
-        <div
-          id="selectedLocation"
-          class="selected-location"
-          style="display: none"
-        >
-          <h3>✓ Selected Location</h3>
-          <div class="location-details">
-            <div class="detail-item">
-              <span class="detail-label">Country:</span>
-              <span class="detail-value" id="selectedCountry">-</span>
+        <!-- Left Section - Form -->
+        <div class="form-section">
+          <form id="locationForm" class="location-form">
+            <!-- Country Selection -->
+            <div class="form-group">
+              <label for="country">
+                Country <span class="required">*</span>
+              </label>
+              <select id="country" name="country" class="form-select" required>
+                <option value="">Loading countries...</option>
+              </select>
+              <span class="helper-text">Start by selecting a country</span>
             </div>
-            <div class="detail-item">
-              <span class="detail-label">Division:</span>
-              <span class="detail-value" id="selectedDivision">-</span>
+
+            <!-- Division Selection -->
+            <div class="form-group">
+              <label for="division">
+                Division / Province <span class="required">*</span>
+              </label>
+              <select
+                id="division"
+                name="division"
+                class="form-select"
+                disabled
+              >
+                <option value="">Select country first</option>
+              </select>
+              <span class="helper-text">Select country to enable</span>
             </div>
-            <div class="detail-item">
-              <span class="detail-label">District:</span>
-              <span class="detail-value" id="selectedDistrict">-</span>
+
+            <!-- District Selection -->
+            <div class="form-group">
+              <label for="district">
+                District <span class="required">*</span>
+              </label>
+              <select
+                id="district"
+                name="district"
+                class="form-select"
+                disabled
+              >
+                <option value="">Select division first</option>
+              </select>
+              <span class="helper-text">Select division to enable</span>
             </div>
-            <div class="detail-item">
-              <span class="detail-label">City:</span>
-              <span class="detail-value" id="selectedCity">-</span>
+
+            <!-- City/Upazila Selection -->
+            <div class="form-group">
+              <label for="city">
+                City / Upazila <span class="required">*</span>
+              </label>
+              <select id="city" name="city" class="form-select" disabled>
+                <option value="">Select district first</option>
+              </select>
+              <span class="helper-text">Select district to enable</span>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-actions">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                id="submitBtn"
+                disabled
+              >
+                Submit
+              </button>
+              <button type="button" class="btn btn-secondary" id="resetBtn">
+                Reset
+              </button>
+            </div>
+          </form>
+
+          <!-- Selected Location Display -->
+          <div
+            id="selectedLocation"
+            class="selected-location"
+            style="display: none"
+          >
+            <h3>✓ Selected Location</h3>
+            <div class="location-details">
+              <div class="detail-item">
+                <span class="detail-label">Country:</span>
+                <span class="detail-value" id="selectedCountry">-</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Division:</span>
+                <span class="detail-value" id="selectedDivision">-</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">District:</span>
+                <span class="detail-value" id="selectedDistrict">-</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">City:</span>
+                <span class="detail-value" id="selectedCity">-</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Section - Guidelines -->
+        <div class="guidelines-section">
+          <div class="guidelines-card">
+            <h3>📋 Quick Guide</h3>
+            <div class="guideline-items">
+              <div class="guideline-item">
+                <span class="step-number">1</span>
+                <div class="step-content">
+                  <strong>Country</strong>
+                  <p>Select country first</p>
+                </div>
+              </div>
+              <div class="guideline-item">
+                <span class="step-number">2</span>
+                <div class="step-content">
+                  <strong>Division</strong>
+                  <p>Choose division/province</p>
+                </div>
+              </div>
+              <div class="guideline-item">
+                <span class="step-number">3</span>
+                <div class="step-content">
+                  <strong>District</strong>
+                  <p>Pick your district</p>
+                </div>
+              </div>
+              <div class="guideline-item">
+                <span class="step-number">4</span>
+                <div class="step-content">
+                  <strong>City</strong>
+                  <p>Select city/upazila</p>
+                </div>
+              </div>
+            </div>
+            <div class="info-box">
+              <p>💡 Each step unlocks the next</p>
             </div>
           </div>
         </div>
